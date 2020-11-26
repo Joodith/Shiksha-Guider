@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cantora+One&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-custom"  id="navbar" style="color:white">
+    <div class="container">
+        <a  style="font-size:40px;font-family: 'Cantora One', sans-serif" class="navbar-brand mynav" href="{% url 'home' %}">Shiksha Guider</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li ><a style="color:white" class="btn btn-simple" href="{% url 'shiksha:signup_user' %}">Signup</a></li>
+            <li><a style="color:white" class="btn btn-simple" href="{% url 'shiksha:login' %}">Login</a></li>
+            <li><a style="color:white" class="btn btn-simple" href="{% url 'shiksha:logout' %}">Logout</a></li>
+             <li><a style="color:white" class="btn btn-simple" href="{% url 'shiksha:register' %}">Client Register</a></li>
+            <li><a style="color:white" class="btn btn-simple" href="{% url 'shiksha:client_log' %}">Client Login</a></li>
+            </ul>
+        <ul class="nav navbar-nav">
+            <a class="btn btn-simple" href="{% url 'shiksha:search_college' %}">
+            <input style="width:250px;height:35px;color:black" type="text" name="search" placeholder="Search college">
+            <input type="submit" style="width:110px" class="btn btn-warning" value="Search">
+            </a>
+        </ul>
+        <ul class="nav navbar-nav" style="margin-top:40px">
+           <li><a style="color:white" class="btn btn-simple" href="{% url 'shiksha:eng_list' %}">Engineering</a></li>
+            <li><a style="color:white" class="btn btn-simple" href="{% url 'shiksha:med_list' %}">Medical</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+{% block body_block %}
+{% endblock %}
+</body>
+</html>
